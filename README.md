@@ -33,6 +33,8 @@ Traditional LLM usage is request/response: a user asks a question, gets an answe
 - **Predictable Bursts**: Scheduled cron jobs create regular traffic spikes (e.g., nightly repository checks), enabling capacity planning but also requiring bandwidth provisioning for peak loads.
 - **New Monitoring Needs**: Traditional LLM monitoring (token count per request) is insufficient; you must now track tool call frequency, loop iterations, and concurrent agent instances to understand real network load.
 
+For a detailed analysis of the actual network traffic flows in a distributed LLM inference setup with Hermes Agent driving the workload, see [NETWORKING.md](NETWORKING.md).
+
 ## 🚀 Quick Start
 
 1. Serve your local LLM with vLLM (see **HERMES.md** for details).
@@ -43,6 +45,7 @@ Traditional LLM usage is request/response: a user asks a question, gets an answe
 ## 📚 Documentation
 
 - **[HERMES.md](HERMES.md)** – Deep dive covering the mental model, five pillars (Memory, Skills, Soul, Crons, Self-Improvement), local vLLM setup, and advanced usage.
+- **[NETWORKING.md](NETWORKING.md)** – Practical analysis of network traffic flow in distributed LLM inference with Hermes Agent driving workloads on vLLM-served models.
 
 ## 💡 Key Ideas Distilled
 
