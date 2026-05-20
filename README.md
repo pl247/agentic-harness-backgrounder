@@ -1,1 +1,1 @@
-# agentic-harness-backgrounder
+# Agentic Harness Backgrounder
