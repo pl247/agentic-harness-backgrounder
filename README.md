@@ -2,6 +2,33 @@
 
 This repository contains documentation for **Hermes Agent**, an open-source agentic framework that turns a Large Language Model (LLM) into a capable, self-improving AI agent — all running locally on your own hardware.
 
+## 🌐 Why Agentic AI Matters — and What It Means for the Network
+
+Agentic AI marks a shift from "AI as a tool you call" to "AI as a system that acts." Instead of single prompt-response exchanges, agents plan, decompose problems, call tools, observe results, and iterate toward a goal. The implications compound quickly.
+
+### What Makes It Significant
+
+The model is no longer the product. The product is the model plus tools, memory, and a planner. Four properties drive the shift:
+
+    Autonomy over orchestration. Traditional automation requires humans to define every branch. Agents reason about which branch to take, handling ambiguity and long-horizon tasks.
+    Tool use as a first-class capability. Once an LLM reliably calls APIs, queries databases, and chains results, it stops being a chatbot and becomes a worker.
+    Composability. Agents spawn sub-agents and specialize. A research agent hands off to a code agent, which hands off to a verifier — mirroring how human teams scale.
+    Persistent state. Memory across sessions lets agents own long-running workflows end-to-end.
+
+
+### How It Evolves the Space
+
+Copilots become coworkers. SaaS apps become tool surfaces — MCP servers and function APIs — rather than UIs, and whoever owns the agent layer owns the user relationship. New failure modes follow: hallucinated tool calls, runaway loops, prompt injection, and goal misalignment become operational risks, not research curiosities. Evaluation also gets harder; judging a 40-step trajectory with branching decisions is nothing like judging a single response, which is why trace-based observability is suddenly load-bearing.
+
+Network Impact: Swarms of Agents On-Prem
+
+Traffic patterns change fundamentally. A single user query can generate dozens to hundreds of internal calls — agent to model, agent to tool, agent to vector DB, agent to agent. East-west fan-out replaces simple request-response. Each hop sits on the critical path of a reasoning loop, so tail latency on any link stalls the whole trajectory. Low-latency fabric, RDMA between GPU nodes, and NIC-to-GPU affinity matter end-to-end, not just inside the training cluster. Agent memory and KV-cache locality also break stateless load balancing; session-aware routing becomes the norm.
+
+Security posture has to evolve in parallel. Each agent and sub-agent needs its own workload identity, scoped credentials, and audit trail — SPIFFE/SPIRE-style patterns fit well. Per-agent egress policy matters more than per-namespace, since agents will try to reach tools they shouldn't. Tool outputs fetched over the network must be treated as untrusted input, because prompt injection is now a network-adjacent threat. A read-only research agent and a write-to-prod agent should not share reachability, even when they share a model backend.
+
+On-prem deployment is what makes this tractable at scale. Sensitive data stays inside the perimeter. Agentic workloads burn ten to a hundred times more tokens than chat, so sustained throughput on owned GPUs beats per-token API pricing quickly. Co-locating model, tools, and data tightens reasoning loops, and version control over models matters when agents have side effects.
+
+
 ## 📖 Core Concept: Agent Harness vs. Framework
 
 - **Agent Harness**: The testing and evaluation environment that gives an LLM the tools and interfaces to act as an agent. It is the sandbox where agents are benchmarked for reliability, safety, and task completion.
