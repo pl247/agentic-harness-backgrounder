@@ -10,11 +10,10 @@ Agentic AI marks a shift from "AI as a tool you call" to "AI as a system that ac
 
 The model is no longer the product. The product is the model plus tools, memory, and a planner. Four properties drive the shift:
 
-    Autonomy over orchestration. Traditional automation requires humans to define every branch. Agents reason about which branch to take, handling ambiguity and long-horizon tasks.
-    Tool use as a first-class capability. Once an LLM reliably calls APIs, queries databases, and chains results, it stops being a chatbot and becomes a worker.
-    Composability. Agents spawn sub-agents and specialize. A research agent hands off to a code agent, which hands off to a verifier — mirroring how human teams scale.
-    Persistent state. Memory across sessions lets agents own long-running workflows end-to-end.
-
+1. **Autonomy over orchestration**. Traditional automation requires humans to define every branch. Agents reason about which branch to take, handling ambiguity and long-horizon tasks.
+2. **Tool use as a first-class capability**. Once an LLM reliably calls APIs, queries databases, and chains results, it stops being a chatbot and becomes a worker.
+3. **Composability**. Agents spawn sub-agents and specialize. A research agent hands off to a code agent, which hands off to a verifier — mirroring how human teams scale.
+4. **Persistent state**. Memory across sessions lets agents own long-running workflows end-to-end.
 
 ### How It Evolves the Space
 
