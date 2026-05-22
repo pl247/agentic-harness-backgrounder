@@ -72,6 +72,7 @@ For a detailed analysis of the actual network traffic flows in a distributed LLM
 
 - **[HERMES.md](HERMES.md)** – Deep dive covering the mental model, five pillars (Memory, Skills, Soul, Crons, Self-Improvement), local vLLM setup, and advanced usage.
 - **[NETWORKING.md](NETWORKING.md)** – Practical analysis of network traffic flow in distributed LLM inference with Hermes Agent driving workloads on vLLM-served models.
+- **[JOKE_OF_THE_DAY.md](JOKE_OF_THE_DAY.md)** – A lighthearted networking joke to brighten your day.
 
 ## 💡 Key Ideas Distilled
 
