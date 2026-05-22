@@ -61,6 +61,12 @@ Traditional LLM usage is request/response: a user asks a question, gets an answe
 
 For a detailed analysis of the actual network traffic flows in a distributed LLM inference setup with Hermes Agent driving the workload, see [NETWORKING.md](NETWORKING.md).
 
+## 😄 Joke of the Day
+
+Why did the network administrator go to therapy?
+
+Because he had too many unresolved issues!
+
 ## 🚀 Quick Start
 
 1. Serve your local LLM with vLLM (see **HERMES.md** for details).
@@ -72,7 +78,6 @@ For a detailed analysis of the actual network traffic flows in a distributed LLM
 
 - **[HERMES.md](HERMES.md)** – Deep dive covering the mental model, five pillars (Memory, Skills, Soul, Crons, Self-Improvement), local vLLM setup, and advanced usage.
 - **[NETWORKING.md](NETWORKING.md)** – Practical analysis of network traffic flow in distributed LLM inference with Hermes Agent driving workloads on vLLM-served models.
-- **[JOKE_OF_THE_DAY.md](JOKE_OF_THE_DAY.md)** – A lighthearted networking joke to brighten your day.
 
 ## 💡 Key Ideas Distilled
 
