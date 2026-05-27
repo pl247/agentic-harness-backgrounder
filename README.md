@@ -38,6 +38,42 @@ On-prem deployment is what makes this tractable at scale. Sensitive data stays i
 
 Hermes Agent combines both: it is a harness that provides tools (web search, terminal, file editing, messaging, etc.) and a framework that implements the agentic loop with memory, skills, personality, scheduling, and self-improvement.
 
+## 🏗️ Architecture and Data Flow
+
+Hermes Agent follows a modular architecture designed for extensibility and local-first operation:
+
+### Core Components
+
+1. **Agent Loop Engine**: The central orchestrator that manages the Observation → Reasoning → Action → Feedback cycle
+2. **Memory System**: Persistent storage for facts, skills, and user preferences that survives across sessions
+3. **Skills Framework**: Modular, reusable approaches for recurring task types (web search, terminal, coding, etc.)
+4. **Tool Interface**: Standardized way for agents to interact with external systems (filesystem, browser, APIs)
+5. **Personality System**: Configurable tone, style, and behavior preferences
+6. **Scheduler (Crons)**: Automated task execution based on time intervals
+7. **Self-Improvement Mechanism**: Automatic skill creation from successful workflows
+
+### Data Flow
+
+When processing a user request:
+
+1. **Input Reception**: User message enters via CLI, API, or messaging gateway
+2. **Context Assembly**: Relevant memories, skills, and personality traits are loaded
+3. **Reasoning Phase**: The LLM analyzes the request and determines needed actions
+4. **Tool Execution**: Selected tools are invoked (web search, terminal commands, file operations)
+5. **Observation Processing**: Results from tool execution are fed back into the system
+6. **Action Selection**: Based on observations, the agent decides next steps
+7. **Response Generation**: Final response is formulated and delivered to the user
+8. **Learning Capture**: Successful patterns are identified and saved as new skills
+
+### Local-First Design
+
+All components operate with data locality in mind:
+- Memory stored in local SQLite database
+- Skills saved as markdown files in ~/.hermes/skills/
+- Configuration maintained in local config.yaml
+- No mandatory external service dependencies
+- Optional integrations (web search, messaging) can be disabled for air-gapped operation
+
 ## 🔐 Why This Matters: Secure, On-Premise Agentic AI
 
 - **Data Sovereignty**: 100% of data (prompts, tool outputs, files) stays within your firewall—no third-party logging or egress.
@@ -63,9 +99,9 @@ For a detailed analysis of the actual network traffic flows in a distributed LLM
 
 ## 😄 Joke of the Day
 
-Why don't networks ever get lost?
+Why did the AI agent bring a ladder to the bar?
 
-Because they always follow the protocol!
+It heard the drinks were on the house!
 
 ## 🚀 Quick Start
 
