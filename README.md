@@ -63,9 +63,9 @@ For a detailed analysis of the actual network traffic flows in a distributed LLM
 
 ## 😄 Joke of the Day
 
-Why did the packet go to therapy?
+Why don't networks ever get lost?
 
-It had too much emotional baggage.
+Because they always follow the protocol!
 
 ## 🚀 Quick Start
 
