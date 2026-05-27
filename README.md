@@ -63,9 +63,9 @@ For a detailed analysis of the actual network traffic flows in a distributed LLM
 
 ## 😄 Joke of the Day
 
-Why did the network administrator go to therapy?
+Why did the router go to therapy?
 
-Because he had too many unresolved issues!
+It had too many routes to deal with!
 
 ## 🚀 Quick Start
 
